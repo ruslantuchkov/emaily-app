@@ -11,7 +11,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  //извлекает user id из cookies
+  //извлекает user id из req.session
   User.findById(id).then(user => {
     done(null, user);
   });
