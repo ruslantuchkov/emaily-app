@@ -8,14 +8,6 @@ import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './SurveyNew';
 
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchUser() {
-      dispatch(actions.fetchUser());
-    }
-  };
-}
-
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -32,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, actions)(App);
