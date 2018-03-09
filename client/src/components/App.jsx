@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { withRouter } from 'react-router-dom';
 
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import SurveyNew from './SurveyNew';
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
   componentDidMount() {
@@ -24,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default withRouter(connect(null, actions)(App));
